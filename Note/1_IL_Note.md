@@ -8,18 +8,18 @@
 
 
 
-<h3>CLR如何进行方法调用</h3>
+<h3>IL如何转换为CPU指令/CLR如何进行方法调用</h3>
 
 > 为了执行方法，首先必须把方法的IL转换成本机(native)CPU指令。这是 CLR 的 JIT (just-in-time或者“即时”)编译器的职责。
 >
-> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/be43483a314945f2bdde6c2d48594c02.png?raw=true =" width="700px" />
+> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/1.4/be43483a314945f2bdde6c2d48594c02.png?raw=true =" width="700px" />
 >
 > 就在Main方法执行之前，CLR会检测出Main的代码引用的所有类型。这导致CLR分配一个**内部数据结构来管理对引用类型的访问**。图1-4的Main方法引用了一个Console类型，导致CLR分配一个内部结构。在这个内部数据结构中，**Console 类型定义的每个方法都有一个对应的记录项**。每个记录项都含有一个地址，根据此**地址即可找到方法的实现**。对这个结构初始化时，CLR将每个记录项都设置成(指向)包含在CLR内部的一个**未编档函数**。我将该函数称为**JITCompiler**。
 > Main方法**首次调用WriteLine时，JITCompiler 函数会被调用**。**JITCompiler函数负责将方法的IL代码编译成本机CPU指令**。由于IL是“**即时**”(just in time)编译的，所以通常将CLR的这个组件称为**JITter或者JIT编译器**。
 >
 > JITCompiler函数被调用时，它知道要调用的是哪个方法，以及具体是什么类型定义了该方法。然后，JITCompiler会在定义(该类型的)程序集的**元数据中查找被调用方法的IL**。接着，JITCompiler**验证IL代码**，并将IL代码**编译成本机CPU指令**。**本机CPU指令保存到动态分配的内存块中**。然后，JITCompiler 回到CLR为类型创建的内部数据结构，找到与被调用方法对应的那条记录，修改最初对JITCompiler的引用，使其指向内存块(其中包含了刚才编译好的本机CPU指令)的地址。最后，JITCompiler函数跳转到内存块中的代码。这些代码正是WriteLine方法(获取单个String参数的那个版本)的具体实现。代码执行完毕并返回时，会回到Main中的代码，并像往常一样继续执行。
 >
-> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/07ce396b5a314c64afb948075a5a6370.png?raw=true =" width="700px" />
+> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/1.4/07ce396b5a314c64afb948075a5a6370.png?raw=true =" width="700px" />
 >
 > 摘自《CLR via C# 》第十一页至十三页
 >
