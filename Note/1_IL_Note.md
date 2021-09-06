@@ -12,4 +12,5 @@
 
 > 为了执行方法，首先必须把方法的IL转换成本机(native)CPU指令。这是 CLR 的 JIT (just-in-time或者“即时”)编译器的职责。
 >
-> 
+> ![第一次方法调用](https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/)U%5BH1T%24BLR%24%7D(X8%25B_W%241FA.png)
+
