@@ -80,3 +80,26 @@
 >
 > 摘自《CLR via C# 》第五页
 
+
+
+<h3>FCL</h3>
+
+> Framework类库(Framework Class Library, FCL)。FCL是一组程序集的统称。
+
+
+
+<h3>CTS</h3>
+
+> 通用类型系统(Common Type System, CTS)。
+>
+> 
+>
+> 通用类型系统定义了如何在公共语言运行时(CLR)中声明、使用和管理类型，同时也是运行时跨语言集成支持的一个重要组成部分。 常规类型系统执行以下功能：
+>
+> - 建立一个支持跨语言集成、类型安全和高性能代码执行的框架。
+> - 提供一个支持完整实现多种编程语言的面向对象的模型。
+> - 定义各语言必须遵守的规则，有助于确保用不同语言编写的对象能够交互作用。
+> - 提供包含应用程序开发中使用的基元数据类型（如[Boolean](https://docs.microsoft.com/zh-cn/dotnet/api/system.boolean)、[Byte](https://docs.microsoft.com/zh-cn/dotnet/api/system.byte)、[Char](https://docs.microsoft.com/zh-cn/dotnet/api/system.char)、[Int32](https://docs.microsoft.com/zh-cn/dotnet/api/system.int32) 和 [UInt64](https://docs.microsoft.com/zh-cn/dotnet/api/system.uint64)）的库。
+>
+> <a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/common-type-system">摘自《微软官方文档/.Net 基础知识/执行模型/通用类型系统(CTS)》</a>
+
