@@ -33,3 +33,6 @@
 > 在上例中, CLR发现System.Console在和调用者不同的程序集中实现。所以，CLR必须查找那个程序集，加载包含程序集清单的PE文件。然后扫描清单，判断是哪个PE文件实现了类型。如果被引用的类型就在清单文件中，一切都很简单。如果类型在程序集的另一个文件中，CLR必须加载那个文件，并扫描其元数据来定位类型。然后，CLR创建它的内部数据结构来表示类型，JIT 编译器完成Main方法的编译。最后，Main方法开始执行。图3-2演示了类型绑定过程。
 
 <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/3.8/5a1fb74540704e81b8e41fe71fa894ad.png?raw=true =" width="700px" />
+
+> 部分摘自《CLR via C# 》第七十页至七十二页，示例代码、反编译代码，元数据等是自己测试截图
+
