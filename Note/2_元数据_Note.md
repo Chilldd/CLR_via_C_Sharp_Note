@@ -10,17 +10,29 @@
 >
 > <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/83ea863780334061a846b7c2354055ee.png?raw=true" width="700px" />
 >
-> <a href="https://docs.microsoft.com/zh-cn/dotnet/framework/tools/ildasm-exe-il-disassembler">ILDASM工具(IL反汇编工具)</a>
+> 摘自《CLR via C# 》第三十四页至三十五页
 >
-> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/8106dd9362274e4e9d90a8a2a991e69a.png?raw=true" width="700px" />
+> 
 >
-> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/08c606662e3b403dbbb03f148f218888.png?raw=true" width="700px" />
+> 下面截图是使用<a href="https://docs.microsoft.com/zh-cn/dotnet/framework/tools/ildasm-exe-il-disassembler">ILDASM工具(IL反汇编工具)</a>反编译出来的一些元数据截图
 >
-> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/f256570e98254524b68822b86abf44f4.png?raw=true" width="700px" />
+> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/8106dd9362274e4e9d90a8a2a991e69a.png?raw=true" width="100%" />
 >
-> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/26c4a137c3b14a5ab54de392742faa70.png?raw=true" width="700px" />
+> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/08c606662e3b403dbbb03f148f218888.png?raw=true" width="100%" />
 >
-> 从中可以看出文件大小(字节数)以及文件各部分大小(字节数和百分比)。对于这个Program.exe应用程序，PE头和元数据占了相当大的比重。事实上，IL 代码只有很少的字节。当然，随着应用程序规模的增大，它会重用大多数类型以及对其他类型和程序集的引用，元数据和头信息在整个文件中的比重越来越小。
+> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/f256570e98254524b68822b86abf44f4.png?raw=true" width="100%" />
+>
+> 从上图可以看到反编译后的元数据，清楚地记录了程序集中所有成员的信息
+>
+> 
+>
+> 下图是程序集统计信息
+>
+> <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/26c4a137c3b14a5ab54de392742faa70.png?raw=true" width="100%" />
+>
+> 从中可以看出文件大小(字节数)以及文件各部分大小(字节数和百分比)。对于这个dll文件，PE头和元数据占了相当大的比重。事实上，IL 代码只有很少的字节。当然，随着应用程序规模的增大，它会重用大多数类型以及对其他类型和程序集的引用，元数据和头信息在整个文件中的比重越来越小。
+>
+> > 注意：顺便说一下，ILDasm.exe的一个bug会影响显示的文件长度，尤其不要相信Unaccounted的信息
 
 
 
