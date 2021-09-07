@@ -19,6 +19,8 @@
 > <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/f256570e98254524b68822b86abf44f4.png?raw=true" width="700px" />
 >
 > <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/2.3/26c4a137c3b14a5ab54de392742faa70.png?raw=true" width="700px" />
+>
+> 从中可以看出文件大小(字节数)以及文件各部分大小(字节数和百分比)。对于这个Program.exe应用程序，PE头和元数据占了相当大的比重。事实上，IL 代码只有很少的字节。当然，随着应用程序规模的增大，它会重用大多数类型以及对其他类型和程序集的引用，元数据和头信息在整个文件中的比重越来越小。
 
 
 
