@@ -76,6 +76,10 @@
 
 <img src="https://github.com/Chilldd/CLR_via_C_Sharp_Note/blob/main/IMG/4.4/67eb99bda5d04b729e75f794fc65e54d.png?raw=true =" width="700px" />
 
+> 上述内容摘自《CLR via C# 》第九十页至九十七页
+
+
+
 > gy_note:
 >
 > 类型对象：
